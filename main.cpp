@@ -4,9 +4,15 @@
 
 int main(int argc, char *argv[])
 {
-    QtWebView::initialize();
     QGuiApplication app(argc, argv);
-    
+    QtWebView::initialize();
+
+    auto dir = QDir::currentPath();
+
+    QString path = QCoreApplication::applicationDirPath()
+        + "/../../html/home.html";
+
+    QUrl url = QUrl::fromLocalFile(path);
 
     QQmlApplicationEngine engine;
     QObject::connect(
@@ -15,8 +21,11 @@ int main(int argc, char *argv[])
         &app,
         []() { QCoreApplication::exit(-1); },
         Qt::QueuedConnection);
-    //engine.loadFromModule("ZQt6WebView", "Main");
-    engine.load(":/webMain.qml");
+    //engine.loadFromModule("ZQt6WebView", "webMain");
+    //engine.load("file:///C:/Users/youngxp/Documents/occt/ZQt6WebView/webMain.qml");
+    engine.rootContext()->setContextProperty("homeUrl", url);
+    engine.load(QUrl::fromLocalFile("../webMain.qml"));
+    engine.rootContext()->setContextProperty("homeUrl", url);
 
     return app.exec();
 }
