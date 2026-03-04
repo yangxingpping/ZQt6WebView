@@ -15,7 +15,8 @@ int main(int argc, char *argv[])
         &app,
         []() { QCoreApplication::exit(-1); },
         Qt::QueuedConnection);
-    engine.loadFromModule("ZQt6WebView", "Main");
+    //engine.loadFromModule("ZQt6WebView", "Main");
+    engine.load(":/webMain.qml");
 
     return app.exec();
 }

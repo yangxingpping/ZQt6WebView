@@ -16,7 +16,8 @@ qt_add_qml_module(appZQt6WebView
     URI ZQt6WebView
     QML_FILES
         Main.qml
-        RESOURCES zQt6WebView.qrc
+        webMain.qml
+        RESOURCES zQt6WebView.qrc qml.qrc
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
