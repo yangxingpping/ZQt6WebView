@@ -8,6 +8,6 @@ Window {
     title: qsTr("Hello World")
     WebView{
         anchors.fill: parent
-        url: "http://localhost:3000"
+        url: "http://localhost:8000/line-simple.html"
     }
 }

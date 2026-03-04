@@ -11,13 +11,13 @@ int main(int argc, char* argv[])
 {
     QGuiApplication app(argc, argv);
 
-    auto httpV = []()
+    /*auto httpV = []()
         {
             ZHttpServer server;
             server.Start();
         };
     thread th(httpV);
-    th.detach();
+    th.detach();*/
 
 
     QtWebView::initialize();
