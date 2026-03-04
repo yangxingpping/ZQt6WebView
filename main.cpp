@@ -21,11 +21,11 @@ int main(int argc, char *argv[])
         &app,
         []() { QCoreApplication::exit(-1); },
         Qt::QueuedConnection);
-    //engine.loadFromModule("ZQt6WebView", "webMain");
+    engine.loadFromModule("ZQt6WebView", "Main");
     //engine.load("file:///C:/Users/youngxp/Documents/occt/ZQt6WebView/webMain.qml");
-    engine.rootContext()->setContextProperty("homeUrl", url);
+    /*engine.rootContext()->setContextProperty("homeUrl", url.toString());
     engine.load(QUrl::fromLocalFile("../webMain.qml"));
-    engine.rootContext()->setContextProperty("homeUrl", url);
+    engine.rootContext()->setContextProperty("homeUrl", url.toString());*/
 
     return app.exec();
 }
