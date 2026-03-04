@@ -1,10 +1,11 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.26)
 
 project(ZQt6WebView VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Quick)
+find_package(Qt6 REQUIRED COMPONENTS WebView)
 
 qt_standard_project_setup(REQUIRES 6.8)
 
@@ -30,7 +31,7 @@ set_target_properties(appZQt6WebView PROPERTIES
 )
 
 target_link_libraries(appZQt6WebView
-    PRIVATE Qt6::Quick
+    PRIVATE Qt6::Quick PRIVATE Qt6::WebView
 )
 
 include(GNUInstallDirs)
