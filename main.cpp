@@ -2,9 +2,24 @@
 #include <QQmlApplicationEngine>
 #include <QtWebView>
 
-int main(int argc, char *argv[])
+#include "ZHttpServer.h"
+#include <thread>
+
+using std::thread;
+
+int main(int argc, char* argv[])
 {
     QGuiApplication app(argc, argv);
+
+    auto httpV = []()
+        {
+            ZHttpServer server;
+            server.Start();
+        };
+    thread th(httpV);
+    th.detach();
+
+
     QtWebView::initialize();
 
     auto dir = QDir::currentPath();

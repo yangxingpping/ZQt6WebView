@@ -8,7 +8,6 @@ Window {
     title: qsTr("Hello World")
     WebView{
         anchors.fill: parent
-        url: "qrc:/html/home.html"
-        //url: "https://www.baidu.com"
+        url: "http://localhost:3000"
     }
 }

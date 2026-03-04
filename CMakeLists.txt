@@ -9,8 +9,13 @@ find_package(unofficial-uwebsockets CONFIG REQUIRED)
 
 qt_standard_project_setup(REQUIRES 6.8)
 
+include_directories(htmlServer)
+
+aux_source_directory(htmlServer A)
+
 qt_add_executable(appZQt6WebView
     main.cpp
+    ${A}
     webMain.qml
 )
 
