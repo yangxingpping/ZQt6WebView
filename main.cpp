@@ -1,8 +1,10 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QtWebView>
 
 int main(int argc, char *argv[])
 {
+    QtWebView::initialize();
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
