@@ -7,7 +7,10 @@ Window {
     visible: true
     title: qsTr("Hello World")
     WebView{
-        anchors.fill: parent
-        url: "http://localhost:8000/line-simple.html"
+        x: -50
+        y: -50
+        width: parent.width+100
+        height: parent.height+100
+        url: "http://localhost:8000/candlestick-sh.html"
     }
 }

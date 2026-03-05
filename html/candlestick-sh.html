@@ -5,18 +5,18 @@
 <html lang="en" style="height: 100%">
 <head>
   <meta charset="utf-8">
-  
+
 </head>
 <body style="height: 100%; margin: 0; width: 100%">
   <div id="container" style="height: 100%; width: 100%"></div>
 
   
   <script type="text/javascript" src="echarts.min.js"></script>
-  
+  <script src="dark.js"></script>
  
   <script type="text/javascript">
     var dom = document.getElementById('container');
-    var myChart = echarts.init(dom, null, {
+    var myChart = echarts.init(dom, 'vintage', {
       renderer: 'canvas',
       useDirtyRect: false
     });
